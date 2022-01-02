@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="edit_mrp_report_mrporder" inherit_id="mrp.report_mrporder">
+            <xpath expr="//div[@class='page']/table[@class='table table-sm']" position="replace">
+                <table class="table table-sm" t-if="o.move_raw_ids">
+                    <t t-set="has_product_barcode"
+                       t-value="any(o.move_raw_ids.filtered(lambda x: x.product_id.barcode))"/>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Onhand</th>
+                            <th>Check</th>
+                            <th>Shortage</th>
+                            <th t-attf-class="{{ 'text-right' if not has_product_barcode else '' }}">Quantity</th>
+                            <th t-if="has_product_barcode" width="15%" class="text-center">Barcode</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-if="o.move_raw_ids">
+                            <tr t-foreach="o.move_raw_ids" t-as="raw_line">
+                                <td>
+                                    <span t-field="raw_line.product_id"/>
+                                </td>
+                                <td>
+                                    <span t-field="raw_line.onhand"/>
+                                </td>
+                                <td>
+                                    <span t-field="raw_line.check"/>
+                                </td>
+                                <td>
+                                    <span t-field="raw_line.shortage"/>
+                                </td>
+                                <td t-attf-class="{{ 'text-right' if not has_product_barcode else '' }}">
+                                    <span t-esc="raw_line.product_uom_qty"/>
+                                    <span t-field="raw_line.product_uom" groups="uom.group_uom"/>
+                                </td>
+                                <td t-if="has_product_barcode" width="15%" class="text-center">
+                                    <t t-if="raw_line.product_id.barcode">
+                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', raw_line.product_id.barcode, 600, 100)"
+                                             style="width:100%;height:35px" alt="Barcode"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </xpath>
+        </template>
+        <record id="edit_stock_move_tree" model="ir.ui.view">
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="mrp.view_stock_move_raw_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='product_uom']" position="after">
+                    <field name="onhand"/>
+                    <field name="check"/>
+                </xpath>
+
+                <xpath expr="//field[@name='product_uom_qty']" position="after">
+                    <field name="shortage"/>
+                </xpath>
+
+            </field>
+        </record>
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_mrp" model="ir.ui.view">
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[3]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="picking_type_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="location_src_id" options="{'no_create': True}" readonly="1"/>
+                    <field name="location_dest_id" options="{'no_create': True}" readonly="1"/>
+                </xpath>
+                <xpath expr="//field[@name='routing_id']" position="after">
+                    <field name="branch_bom_id" options="{'no_create': True}" readonly="1"/>
+                    <field name="branch_id" options="{'no_create': True}" readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_mrp_bom" model="ir.ui.view">
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="branch_id" options="{'no_create': True}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_quality_check" model="ir.ui.view">
+            <field name="model">quality.check</field>
+            <field name="inherit_id" ref="quality_control.quality_check_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="branch_id" options="{'no_create': True}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_quality_point" model="ir.ui.view">
+            <field name="model">quality.point</field>
+            <field name="inherit_id" ref="quality.quality_point_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="branch_id" options="{'no_create': True}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_quality_alert" model="ir.ui.view">
+            <field name="model">quality.alert</field>
+            <field name="inherit_id" ref="quality_control.quality_alert_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="branch_id" options="{'no_create': True}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_maintenance_request" model="ir.ui.view">
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='production_id']" position="after">
+                    <field name="branch_id" options="{'no_create': True}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!--&lt;!&ndash; Inherit Form View to Modify it &ndash;&gt;-->
+        <!--<record id="edit_res_partner" model="ir.ui.view">-->
+        <!--<field name="model">res.partner</field>-->
+        <!--<field name="inherit_id" ref="base.view_partner_form"/>-->
+        <!--<field name="arch" type="xml">-->
+
+        <!--<xpath expr="//field[@name='vat']" position="after">-->
+        <!--<field name="branch_id" options="{'no_create': True}"/>-->
+        <!--</xpath>-->
+
+        <!--</field>-->
+        <!--</record>-->
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_product_template" model="ir.ui.view">
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='barcode']" position="after">
+                    <field name="is_mto"/>
+                    <field name="branch_id" options="{'no_create': True}" attrs="{'invisible':[('is_mto','=',False)]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="edit_product_product" model="ir.ui.view">
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='barcode']" position="after">
+                    <field name="is_mto"/>
+                    <field name="branch_id" options="{'no_create': True}" attrs="{'invisible':[('is_mto','=',False)]}"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
