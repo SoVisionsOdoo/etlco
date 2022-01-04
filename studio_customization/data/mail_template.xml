@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.doc_expiry_44ddd39a-54f9-4aaf-9cea-32b483801f83" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;p style="margin:0px 0 1rem 0;font-size:13px;font-family:&amp;quot;Lucida Grande&amp;quot;, Helvetica, Verdana, Arial, sans-serif;"&gt;Document ${object.x_name} is about to expire&lt;/p&gt;&lt;p style="margin:0px 0 1rem 0;font-size:13px;font-family:&amp;quot;Lucida Grande&amp;quot;, Helvetica, Verdana, Arial, sans-serif;"&gt;&lt;br&gt;&lt;/p&gt;&lt;p style="margin:0px 0 1rem 0;font-size:13px;font-family:&amp;quot;Lucida Grande&amp;quot;, Helvetica, Verdana, Arial, sans-serif;"&gt;please renew ASAP.&lt;/p&gt;&lt;p style="margin:0px 0 1rem 0;font-size:13px;font-family:&amp;quot;Lucida Grande&amp;quot;, Helvetica, Verdana, Arial, sans-serif;"&gt;&lt;br&gt;&lt;/p&gt;</field>
+    <field name="copyvalue" eval="False"/>
+    <field name="email_cc" eval="False"/>
+    <field name="email_from">${object.create_uid.email}</field>
+    <field name="email_to">${object.create_uid.email}</field>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="studio_customization.documents_c61f21fd-304a-4122-a0c9-c62a940a9e70"/>
+    <field name="model_object_field" eval="False"/>
+    <field name="name">Doc expiry</field>
+    <field name="null_value" eval="False"/>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_name" eval="False"/>
+    <field name="report_template" eval="False"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="sub_model_object_field" eval="False"/>
+    <field name="sub_object" eval="False"/>
+    <field name="subject">Renew Doc ${object.x_name}</field>
+    <field name="use_default_to" eval="False"/>
+  </record>
+  <record id="studio_customization.renew_31df3ae7-2081-4933-a118-406fc4f942f7" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;p style="margin:0px 0 1rem 0;font-size:13px;font-family:&amp;quot;Lucida Grande&amp;quot;, Helvetica, Verdana, Arial, sans-serif;"&gt;please renew istemara for&amp;nbsp;${object.active}&lt;/p&gt;</field>
+    <field name="copyvalue" eval="False"/>
+    <field name="email_cc">it@etlco.com.sa</field>
+    <field name="email_from">admin6@etlco.com.sa</field>
+    <field name="email_to">admin3@etlco.com.sa</field>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="fleet.model_fleet_vehicle"/>
+    <field name="model_object_field" eval="False"/>
+    <field name="name">renew</field>
+    <field name="null_value" eval="False"/>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_name" eval="False"/>
+    <field name="report_template" eval="False"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="sub_model_object_field" eval="False"/>
+    <field name="sub_object" eval="False"/>
+    <field name="subject">${object.name}</field>
+    <field name="use_default_to" eval="False"/>
+  </record>
+</odoo>

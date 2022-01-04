@@ -1,0 +1,20 @@
+The following relational data haven't been exported because they either refer
+to a model that Studio doesn't export, or have no XML id:
+
+Record: studio_customization.define_document_on_a_69050ffa-ebae-4643-a5a2-703abb91ce54
+Model: ir.actions.server
+Field: fields_lines
+Type: one2many
+Value: ir.server.object.lines(687,) ('ir.server.object.lines,687')
+
+Record: studio_customization.new_request_d043d818-f8a4-43cf-9981-a37336609596
+Model: ir.actions.server
+Field: fields_lines
+Type: one2many
+Value: ir.server.object.lines(690,) ('ir.server.object.lines,690')
+
+Record: studio_customization.istemara_renew_c7b08f50-cdda-4cf6-a3fd-2a59295cf06b
+Model: base.automation
+Field: trg_date_calendar_id
+Type: many2one
+Value: resource.calendar(1,) ('Standard 40 hours/week')

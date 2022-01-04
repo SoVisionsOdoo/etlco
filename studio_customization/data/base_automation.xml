@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.define_document_on_a_1de4f7e9-1bcf-4420-b492-3ca28a35cf95" model="base.automation" context="{'studio': True}">
+    <field name="action_server_id" ref="studio_customization.define_document_on_a_69050ffa-ebae-4643-a5a2-703abb91ce54"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain">[["res_model_id","=",470]]</field>
+    <field name="filter_pre_domain" eval="False"/>
+    <field name="last_run" eval="False"/>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" eval="False"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type" eval="False"/>
+    <field name="trigger">on_create</field>
+  </record>
+  <record id="studio_customization.istemara_renew_c7b08f50-cdda-4cf6-a3fd-2a59295cf06b" model="base.automation" context="{'studio': True}">
+    <field name="action_server_id" ref="studio_customization.istemara_renew_72167ff4-31e4-4fda-88f9-cfc035fcf682"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain" eval="False"/>
+    <field name="filter_pre_domain" eval="False"/>
+    <field name="last_run">2021-11-25 13:59:25</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="studio_customization.new_date_fleet_vehic_90a6b21a-7afd-45c5-8d06-955e5c702c99"/>
+    <field name="trg_date_range">-10</field>
+    <field name="trg_date_range_type">day</field>
+    <field name="trigger">on_time</field>
+  </record>
+  <record id="studio_customization.new_request_7cc3984f-5794-4793-a4c4-0eca95d8aab3" model="base.automation" context="{'studio': True}">
+    <field name="action_server_id" ref="studio_customization.new_request_d043d818-f8a4-43cf-9981-a37336609596"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain" eval="False"/>
+    <field name="filter_pre_domain" eval="False"/>
+    <field name="last_run" eval="False"/>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" eval="False"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type" eval="False"/>
+    <field name="trigger">on_create</field>
+  </record>
+  <record id="studio_customization.reminder_bb28e976-da0a-4c30-8ed5-e94497946eec" model="base.automation" context="{'studio': True}">
+    <field name="action_server_id" ref="studio_customization.reminder_89c11418-902f-4ec2-b7fd-93d9c221a2db"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain" eval="False"/>
+    <field name="filter_pre_domain" eval="False"/>
+    <field name="last_run">2021-11-25 13:59:25</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="studio_customization.new_date_time_x_docu_76add696-bda2-414c-aafa-0927f39ebe2f"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type">minutes</field>
+    <field name="trigger">on_time</field>
+  </record>
+  <record id="studio_customization.reminder_f480328c-e450-48a8-81e7-8ce2d0461054" model="base.automation" context="{'studio': True}">
+    <field name="action_server_id" ref="studio_customization.reminder_d4ae320f-2bf5-4755-b73b-72384b570510"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain" eval="False"/>
+    <field name="filter_pre_domain" eval="False"/>
+    <field name="last_run">2021-11-25 13:59:25</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="studio_customization.new_date_time_x_docu_76add696-bda2-414c-aafa-0927f39ebe2f"/>
+    <field name="trg_date_range">1</field>
+    <field name="trg_date_range_type">minutes</field>
+    <field name="trigger">on_time</field>
+  </record>
+</odoo>

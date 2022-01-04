@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="purchase_requisition.menu_purchase_requisition_pro_mgt" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="purchase_requisition.action_purchase_requisition"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Purchase Requisition</field>
+    <field name="parent_id" ref="purchase.menu_purchase_root"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.accounting_countries_d0111bca-06fb-4d17-88ff-35e0e4dae206" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.countries_b764c136-5006-4467-81b0-b5397dc9bc55"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Countries</field>
+    <field name="parent_id" ref="account.account_account_menu"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.accounting_country_g_fef2bb3c-604d-4735-ad7d-fc970873eaff" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.country_group_417382f6-af68-4db1-8709-b9e2f43dd67b"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Country group</field>
+    <field name="parent_id" ref="account.account_account_menu"/>
+    <field name="sequence">5</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.dependencies_dacd8222-3e46-4f5f-9c14-e5641eb3a57b" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Dependencies</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-sitemap,#262c34,#D89F45</field>
+  </record>
+  <record id="studio_customization.dependencies_name_b0dcca7d-cbe3-4084-9709-c907f64f0091" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.name_d144485a-ef43-4396-8db0-6e4df04493f8"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Name</field>
+    <field name="parent_id" ref="studio_customization.dependencies_dacd8222-3e46-4f5f-9c14-e5641eb3a57b"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.documents_29ffe368-5a4e-4d50-8602-d560a77619c6" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Documents</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-inbox,#FFFFFF,#58a177</field>
+  </record>
+  <record id="studio_customization.documents_act_a6c6383c-7bf0-4de1-8652-cc156a95e0e0" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.act_c3be9ee7-3893-4619-a5ee-13424850ab14"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">act</field>
+    <field name="parent_id" ref="studio_customization.documents_29ffe368-5a4e-4d50-8602-d560a77619c6"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.documents_activities_e8a2318e-51fc-4e98-b603-2846577ed28b" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.activities_03774263-bd26-4e0d-9630-ac5ab43c443a"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Activities</field>
+    <field name="parent_id" ref="studio_customization.documents_29ffe368-5a4e-4d50-8602-d560a77619c6"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.documents_documents_2018bd0b-d660-40fd-85b8-872c0d4d757c" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.documents_daf0d995-6123-4498-b813-269811a0fbd8"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Documents</field>
+    <field name="parent_id" ref="studio_customization.documents_29ffe368-5a4e-4d50-8602-d560a77619c6"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.employees_eos_112d0a31-0018-40ce-acf3-c06627ee493c" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.eos_3fca9f4a-74fa-4d44-9529-d739030bd14a"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">EOS</field>
+    <field name="parent_id" ref="hr.menu_hr_root"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.project_teams_5dfde0f0-2230-4cdd-ac5a-42bfecdcc5b2" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.teams_05d9cce7-f1c2-473c-acd3-9af3900a082e"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Teams</field>
+    <field name="parent_id" ref="project.menu_project_config"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sales_customers_917945f4-5376-4569-b921-3c4a6849d13e" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.customers_6850424b-48af-410d-b6a9-bb4bc3491a0e"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Customers</field>
+    <field name="parent_id" ref="sale.sale_order_menu"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sales_orders_240289f7-4882-4e51-8dba-96bec74f700b" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.orders_6deeb003-1373-48ce-866c-89cb107c09ac"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Orders</field>
+    <field name="parent_id" ref="sale.sale_order_menu"/>
+    <field name="sequence" eval="False"/>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sales_products_8e6664a3-9906-492f-996b-f0c0fe9abe17" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.products_b61522f4-efc3-47c8-a499-60691d0f146c"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Products</field>
+    <field name="parent_id" ref="sale.sale_menu_root"/>
+    <field name="sequence">6</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sales_project_contra_5bbb1ce9-2bbe-4b76-9518-2786e6f779e5" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.project_contracts_6569077a-b4d9-4195-b0f7-1a1d6c3f3aec"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Project Contracts</field>
+    <field name="parent_id" ref="sale.sale_menu_root"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sales_project_contra_7bb648bf-528f-4c44-91ff-2de44d27c63a" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.project_contracts_2f9b2f4a-c497-49b9-8d9e-19c6b255486a"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Project Contracts</field>
+    <field name="parent_id" ref="sale.sale_menu_root"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.technical_dept_84110e6b-43d4-455f-b71f-45d614c4fd19" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Technical Dept</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-pie-chart,#FFAB4A,#34495e</field>
+  </record>
+  <record id="studio_customization.technical_dept_techn_bce8c2ec-441f-4b8f-ba2a-9467fe5372b3" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.technical_reports_edb10192-b89c-477d-8ab7-0e081e2fd92c"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Technical Reports</field>
+    <field name="parent_id" ref="studio_customization.technical_dept_84110e6b-43d4-455f-b71f-45d614c4fd19"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.tender_93555846-9b47-405f-a318-6179990e64d0" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Tender</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-file-o,#f1c40f,#34495e</field>
+  </record>
+  <record id="studio_customization.tender_test_766e5548-bb25-4c53-b439-ee63556fdfab" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.test_7a0d7256-0d43-43f8-9bf9-fcfcb54367f4"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Tender Checklist</field>
+    <field name="parent_id" ref="studio_customization.tender_93555846-9b47-405f-a318-6179990e64d0"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.tickets_e65a90f6-09db-413c-8591-f9dd6c81ba8c" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Tickets</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-rocket,#FFAB4A,#606060</field>
+  </record>
+  <record id="studio_customization.tickets_ticket_018e62a6-7187-48cb-beb1-51e0085464c4" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.ticket_53c46b9b-2c3a-471d-9a9e-337dac349a92"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Ticket</field>
+    <field name="parent_id" ref="studio_customization.tickets_e65a90f6-09db-413c-8591-f9dd6c81ba8c"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+</odoo>
