@@ -7,7 +7,7 @@
     """,
     'author': "So Visions",
     'category': 'Sales',
-    'version': '12.0.1.0.2',
+    'version': '14.0.1.0.2',
     'depends': ['base', 'account','so_qr_invoice'],
     'data': [
         # 'views/customer_invoice_report_ar.xml',
