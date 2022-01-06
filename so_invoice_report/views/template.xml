@@ -1,0 +1,40 @@
+<odoo>
+    <template id="so_invoice_report.external_layout_invoice">
+        <t t-call="so_invoice_report.external_layout_header_invoice"/>
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+             t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-set="colclass" t-value="('col-md-5' if report_type == 'html' else 'col-5') + ' ml-auto'"/>
+            <t t-if="address">
+                <div class="address row">
+                    <t t-if="information_block">
+                        <t t-set="colclass" t-value="'col-5 offset-1'"/>
+                        <div name="information_block" class="col-6">
+                            <t t-raw="information_block"/>
+                        </div>
+                    </t>
+                    <div name="address" t-att-class="colclass">
+                        <t t-raw="address"/>
+                    </div>
+                </div>
+            </t>
+            <t t-raw="0"/>
+        </div>
+        <t t-call="so_invoice_report.external_layout_footer_invoice"/>
+    </template>
+    <template id="external_layout_header_invoice">
+        <div class="header">
+            <div class="text-center" style="font-family:Calibri;height:100px; width:100%;">
+                <img t-if="o.company_id.header" t-att-src="image_data_uri(o.company_id.header)" style="width:102%;"
+                     height="130%"/>
+            </div>
+        </div>
+    </template>
+    <template id="external_layout_footer_invoice">
+        <div class="footer">
+            <div class="text-center" style="font-family:Calibri;height:100px; width:100%;">
+                <img t-if="o.company_id.footer" t-att-src="image_data_uri(o.company_id.footer)" style="width:100%;"
+                     height="90%"/>
+            </div>
+        </div>
+    </template>
+</odoo>

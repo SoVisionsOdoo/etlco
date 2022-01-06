@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <template id="customer_report_template_ar">
+        <t t-call="so_invoice_report.external_layout_invoice">
+            <t t-set="o" t-value="doc.with_context({'lang': 'en_US'})"/>
+            <div class="page">
+                <t t-foreach="docs" t-as="o">
+
+<table style="border: none;width:850pt;">
+    <tbody>
+
+        <tr>
+            <td rowspan="2" style="width:850pt;border:solid windowtext 1.0pt;border-top:solid windowtext 1.0pt;background:white;padding:.75pt 5.4pt 0cm 5.4pt;height:22.5pt;">
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:  .0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:21px;font-family:"Arial",sans-serif;color:black;'>فاتورة ضريبية   </span><span dir="LTR" style='font-size:21px;font-family:"Arial",sans-serif;color:black;'>TAX INVOICE</span><span style='font-size:21px;font-family:  "Arial",sans-serif;color:black;'></span></p>
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:  .0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:21px;font-family:"Arial",sans-serif;color:black;'></span><span dir="LTR" style='font-size:21px;font-family:"Arial",sans-serif;color:black;'> </span><span style='font-size:21px;font-family:  "Arial",sans-serif;color:black;'></span></p>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+<br/>
+<table style="width:850pt;border: none;">
+    <tbody>
+        <tr>
+            <td style="width: 174.45pt;border: 1pt solid windowtext;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Invoice Number:</p>
+            </td>
+            <td style="width: 180.45pt;border-top: 1pt solid windowtext;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-field="o.name"/></p>
+            </td>
+            <td style="width: 216.6pt;border-top: 1pt solid windowtext;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-image: initial;border-left: none;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:"Arial",sans-serif;'>رقم الفاتورة :</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 174.45pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Invoice Issue Date:</p>
+            </td>
+            <td style="width: 180.45pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-field="o.invoice_date"/></p>
+            </td>
+            <td style="width: 216.6pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:"Arial",sans-serif;'>تاريخ اصدار الفاتورة</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 174.45pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Due Date:</p>
+            </td>
+            <td style="width: 180.45pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-field="o.invoice_date_due"/></p>
+            </td>
+            <td style="width: 216.6pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:"Arial",sans-serif;'>تاريخ الاستحقاق</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 174.45pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>PO NO:</p>
+            </td>
+            <td style="width: 180.45pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-field="o.po_no"/></p>
+            </td>
+            <td style="width: 216.6pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:"Arial",sans-serif;'>رقم امر الشراء</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 174.45pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>PO Date</p>
+            </td>
+            <td style="width: 180.45pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-field="o.po_date"/></p>
+            </td>
+            <td style="width: 216.6pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 22.95pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:"Arial",sans-serif;'>تاريخ امر الشراء</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 174.45pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Project Name :</p>
+            </td>
+            <td style="width: 180.45pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-field="o.project"/></p>
+            </td>
+            <td style="width: 216.6pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;height: 21.65pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:"Arial",sans-serif;'>اسم المشروع :</span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<div align="center" style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>
+    <table style="width: 850pt;border:none;">
+        <tbody>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-right:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Seller :</span><span dir="RTL" style='font-size:13px;font-family:  "Arial",sans-serif;'>  </span><span style="font-size:13px;"></span></p>
+                </td>
+                <td style="width:148.5pt;border-top:solid windowtext 1.0pt;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'> </span></p>
+                </td>
+                <td style="width:49.5pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>المورد :</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:solid windowtext 1.0pt;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Buyer:</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:solid windowtext 1.0pt;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;"></span></p>
+                </td>
+                <td style="width:54.0pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>العميل :</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;height:52.6pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Name :</span></p>
+                </td>
+                <td style="width:148.5pt;border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.6pt;">
+                    <p style='margin:0cm;margin-bottom:.0001pt;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>شركة الفحوصات والمختبرات البيئية</span><span style='font-size:13px;font-family:  "Arial",sans-serif;'>  <span dir="RTL">المحدودة</span> ENVIRONMENTAL TESTING AND LABORATORIES LTD. COMPANY</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'></span></p>
+                </td>
+                <td style="width:49.5pt;border:solid windowtext 1.0pt;border-top:  none;background:white;padding:0cm 5.4pt 0cm 5.4pt;height:52.6pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>الاسم :</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.6pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Name :</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.6pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.name"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:52.6pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>الاسم</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Building No:</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>2239</span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>رقم المبنى</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Building No:</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.build_no"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>رقم المبنى</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Street Name</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>زيد بن الخطاب</span></p>
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>Zayd ibn Al Khattab</span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>اسم الشارع</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Street Name</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.street"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>اسم الشارع</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">District :</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>Al Olaya <span dir="RTL">العليا</span></span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>الحي</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">District :</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.district"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>الحي</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">City :</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>Khobar<span dir="RTL">  الخبر</span></span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>المدينة</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">City :</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.city"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>المدينة</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Country :</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>Kingdom of Saudi Arabia<span dir="RTL"> المملكة العربية السعودية</span></span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>البلد</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Country :</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.country_id.name"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>البلد</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Postal Code</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>34446</span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>رمز البريدي</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Postal Code</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.zip"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>رمز البريدي</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Additional No:</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>7161</span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>رقم اضافي</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Additional No:</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.add_no"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>رقم اضافي</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">VAT Number</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>300541584600003</span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>رقم تسجيل قيمة مضافة</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">VAT Number</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.vat"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>رقم تسجيل قيمة مضافة</span></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:76.5pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Other Buyer ID</span></p>
+                </td>
+                <td style="width:148.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>CR2051039903</span></p>
+                </td>
+                <td style="width:49.5pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>معرف اخر</span></p>
+                </td>
+                <td style="width:81.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:13px;">Other Buyer ID</span></p>
+                </td>
+                <td style="width:162.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:13px;"><span t-field="o.partner_id.other_id"/></span></p>
+                </td>
+                <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                    <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-size:13px;font-family:"Arial",sans-serif;'>معرف اخر</span></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<table style="width:850pt;border:none;">
+    <tbody>
+        <tr>
+            <td style="width:72.0pt;border:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span dir="RTL" style='font-family:  "Arial",sans-serif;'>رقم المنتج</span>  Item No</p>
+            </td>
+            <td style="width:153.0pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'>Item Name</p>
+            </td>
+            <td style="width:113.85pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span dir="RTL" style='font-family:  "Arial",sans-serif;'>اسم الصنف</span></p>
+            </td>
+            <td style="width:39.75pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span dir="RTL" style='font-family:"Arial",sans-serif;'>الكمية  </span>QTY</p>
+            </td>
+            <td style="width:36.05pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span dir="RTL" style='font-family:"Arial",sans-serif;'>سعر   الوحدة  </span>Units Price<span dir="RTL" style='font-family:"Arial",sans-serif;'></span></p>
+            </td>
+            <td style="width:58.95pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span dir="RTL" style='font-size:12px;font-family:"Arial",sans-serif;'>المبلغ الخاضع للضريبة</span><span style="font-size:12px;">Taxable Amount</span></p>
+            </td>
+            <td style="width:43.9pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span dir="RTL" style='font-family:"Arial",sans-serif;'> الضريبة</span>TAX</p>
+            </td>
+            <td style="width:54.0pt;border:solid windowtext 1.0pt;border-left:  none;padding:0cm 5.4pt 0cm 5.4pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span dir="RTL" style='font-size:11px;font-family:"Arial",sans-serif;'>المجموع شامل القيمة المضافة</span></p>
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style="font-size:11px;">Item Subtotal  (Including VAT)</span></p>
+            </td>
+        </tr>
+        <tr t-foreach="o.invoice_line_ids" t-as="l">
+            <td style="width:72.0pt;border:solid windowtext 1.0pt;border-top:  none;padding:0cm 5.4pt 0cm 5.4pt;height:22.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span dir="RTL" style='font-family:"Arial",sans-serif;'><span t-esc="l.number"/></span></p>
+            </td>
+            <td style="width:153.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-esc="l.product_id.name"/></p>
+            </td>
+            <td style="width:113.85pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-esc="l.product_id.name"/></p>
+            </td>
+            <td style="width:39.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-esc="l.quantity"/></p>
+            </td>
+            <td style="width:36.05pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-esc="l.price_unit"/></p>
+            </td>
+            <td style="width:58.95pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-esc="l.price_subtotal"/></p>
+            </td>
+            <td style="width:43.9pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-esc="'%.2f' % l.tax_value"/></p>
+            </td>
+            <td style="width:54.0pt;border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:22.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span t-esc="l.price_total"/></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<table style="width:850pt;border:none;">
+    <tbody>
+        <tr>
+            <td style="width: 202.75pt;border: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Total ( Excluding VAT )</p>
+            </td>
+            <td style="width: 274.25pt;border-top: 1pt solid windowtext;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-image: initial;border-left: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:  "Arial",sans-serif;'>الاجمالي ( غير شاملة ضريبة القيمة المضافة</span></p>
+            </td>
+            <td style="width: 94.25pt;border-top: 1pt solid windowtext;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-image: initial;border-left: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span t-esc="o.amount_untaxed"/></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 202.75pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Discounts</p>
+            </td>
+            <td style="width: 274.25pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:  "Arial",sans-serif;'>مجموع الخصومات</span></p>
+            </td>
+            <td style="width: 94.25pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span t-esc="'%.2f' % o.total_dis"/></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 202.75pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Total Taxable Amount ( Excluding VAT )</p>
+            </td>
+            <td style="width: 274.25pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:  "Arial",sans-serif;'>الأجمالي الخاضع للضريبة ( غير شاملة ضلريبة القيمة المضافة</span></p>
+            </td>
+            <td style="width: 94.25pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span t-esc="o.amount_untaxed"/></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 202.75pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Total VAT</p>
+            </td>
+            <td style="width: 274.25pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:  "Arial",sans-serif;'>مجموع ضريبة القيمة المضافة</span></p>
+            </td>
+            <td style="width: 94.25pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span t-esc="o.amount_tax"/></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 202.75pt;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: 1pt solid windowtext;border-image: initial;border-top: none;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'>Grand Total</p>
+            </td>
+            <td style="width: 274.25pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span dir="RTL" style='font-family:  "Arial",sans-serif;'>الأجمالي</span></p>
+            </td>
+            <td style="width: 94.25pt;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span t-esc="o.amount_total"/></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<table style="width:850pt;border:none;">
+    <tbody>
+        <tr>
+            <td style="width: 571.5pt;border: 1pt solid windowtext;padding: 0cm 5.4pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong> NET AMOUNT OF INVOICE (IN WORDS): </strong><span t-esc="o.convertNumber_en(int(o.amount_total)) "/></p>
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'></p>
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span style='font-family:"Arial",sans-serif;'><strong>صافي مبلغ الفاتورة بالكلمات ريال سعودي</strong></span><span dir="LTR"><span t-esc="o.convertNumber_ar(int(o.amount_total)) "/> : </span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<table style="width:850pt;border:none;">
+    <tbody>
+        <tr>
+            <td style="width:162.0pt;border:solid windowtext 1.0pt;border-right:none;padding:  0cm 5.4pt 0cm 5.4pt;height:28.75pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'></span></p>
+            </td>
+            <td colspan="6" style="width:409.5pt;border:solid windowtext 1.0pt;border-left:none;padding:  0cm 5.4pt 0cm 5.4pt;height:28.75pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><u><span style='font-family:"Arial",sans-serif;'>Bank Details:<span dir="RTL">تفاصيل الحساب البنكي</span></span></u></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7" style="width:571.5pt;border-top:none;border-left:  solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:17.25pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>Company name:Environmental Testing and Laboratories Ltd. Co.</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7" style="width:571.5pt;border-top:none;border-left:  solid windowtext 1.0pt;border-bottom:none;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt;">
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:  .0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>الاسم التجاري : شركة الفحوصات والمختبرات البيئية المحدوده</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="width:214.2pt;border:none;border-left:  solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'><span t-esc="o.company_id.banck_name"/></span></p>
+            </td>
+            <td style="width:31.55pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td style="width:31.55pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td style="width:21.35pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td style="width:21.35pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td style="width:251.5pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span style='font-size:13px;font-family:"Arial",sans-serif;'><span t-esc="o.company_id.banck_name_ar"/></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="width:245.75pt;border:none;border-left:  solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'><span t-esc="o.company_id.bank_address"/></span></p>
+            </td>
+            <td colspan="4" style="width:325.75pt;border:none;border-right:  solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span style='font-size:13px;font-family:"Arial",sans-serif;'><span t-esc="o.company_id.bank_address"/></span></p>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td colspan="3" style="width:245.75pt;border:none;border-left:  solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>Al Khobar, K.S.A</span></p>
+            </td>
+            <td colspan="4" style="width:325.75pt;border:none;border-right:  solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><span style='font-size:13px;font-family:"Arial",sans-serif;'>مدينة الخبر، المملكة العربية السعودية</span></p>
+            </td>
+        </tr> -->
+        <tr>
+            <td style="width: 162pt;border-top: none;border-right: none;border-bottom: none;border-image: initial;border-left: 1pt solid windowtext;padding: 0cm 5.4pt;height: 15pt;vertical-align: top;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:13px;font-family:"Arial",sans-serif;'>IBAN No.</span></strong></p>
+            </td>
+            <td colspan="5" style="width:158.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><strong><u><span style='font-size:13px;font-family:"Arial",sans-serif;'><span t-esc="o.company_id.iban"/></span></u></strong></p>
+            </td>
+            <td style="width:251.5pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><strong><span style='font-size:13px;font-family:"Arial",sans-serif;'>رقم الايبان</span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:162.0pt;border:none;border-left:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:13px;font-family:"Arial",sans-serif;'>Swift Code</span></strong></p>
+            </td>
+            <td style="width:52.2pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td colspan="2" style="width:63.1pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:13px;font-family:"Arial",sans-serif;'><span t-esc="o.company_id.swift"/></span></strong></p>
+            </td>
+            <td style="width:21.35pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td style="width:21.35pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td style="width:251.5pt;border:none;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><strong><span style='font-size:13px;font-family:"Arial",sans-serif;'>رمز سويفت</span></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:162.0pt;border:solid windowtext 1.0pt;border-top:none;border-right:none;padding:  0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:13px;font-family:"Arial",sans-serif;'>Account No.</span></strong></p>
+            </td>
+            <td colspan="5" style="width:158.0pt;border:none;border-bottom:  solid windowtext 1.0pt;padding:  0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><strong><span style='font-size:13px;font-family:"Arial",sans-serif;'><span t-esc="o.company_id.banck_account_no"/></span></strong></p>
+            </td>
+            <td style="width:251.5pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p dir="RTL" style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:right;'><strong><span style='font-size:13px;font-family:"Arial",sans-serif;'>رقم الحساب</span></strong></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<br/>
+<br/>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span dir="RTL" style='font-family:"Arial",sans-serif;'></span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:16px;line-height:107%;"></span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span style="font-size:16px;line-height:107%;"></span></p>
+<table style="border: none;width:850pt;">
+    <tbody>
+        <tr>
+            <td style="width:173.25pt;border-top:solid windowtext 1.0pt;border-left:none;border-bottom:none;border-right:none;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:16px;font-family:"Arial",sans-serif;'>Accountant <span dir="RTL">المحاسب</span> </span></p>
+            </td>
+            <td style="width:43.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td style="width:131.0pt;border:none;border-top:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:16px;font-family:"Arial",sans-serif;'>Dep. In charge <span dir="RTL">مشرف    القسم</span></span></p>
+            </td>
+            <td style="width:41.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;"><br/></td>
+            <td style="width:200.0pt;border:none;border-top:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:15.0pt;">
+                <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><span style='font-size:16px;font-family:"Arial",sans-serif;'>Company Stamp <span dir="RTL"> ختم الشركة</span></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><span dir="RTL" style='font-size:16px;line-height:107%;font-family:"Arial",sans-serif;'></span></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'></p>
+                
+                </t>
+            </div>
+        </t>
+    </template>
+    <template id="customer_report_ar">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="so_invoice_report.customer_report_template_ar"/>
+            </t>
+        </t>
+    </template>
+
+    <report id="report_customer_report_ar"
+            model="account.move"
+            string="Etlco Invoice "
+            report_type="qweb-pdf"
+            name="so_invoice_report.customer_report_ar"
+            file="so_invoice_report.customer_report_ar"
+            attachment_use="True"
+    />   
+</odoo>
