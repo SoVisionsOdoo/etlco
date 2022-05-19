@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_so_customer_reports_so_customer_reports,so_customer_reports.so_customer_reports,model_so_customer_reports_so_customer_reports,,1,0,0,0

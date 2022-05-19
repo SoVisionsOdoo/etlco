@@ -17,7 +17,7 @@
     <field name="active" eval="True"/>
     <field name="filter_domain" eval="False"/>
     <field name="filter_pre_domain" eval="False"/>
-    <field name="last_run">2021-11-25 13:59:25</field>
+    <field name="last_run">2022-01-26 08:54:41</field>
     <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
     <field name="trg_date_id" ref="studio_customization.new_date_fleet_vehic_90a6b21a-7afd-45c5-8d06-955e5c702c99"/>
     <field name="trg_date_range">-10</field>
@@ -41,7 +41,7 @@
     <field name="active" eval="True"/>
     <field name="filter_domain" eval="False"/>
     <field name="filter_pre_domain" eval="False"/>
-    <field name="last_run">2021-11-25 13:59:25</field>
+    <field name="last_run">2022-01-26 08:54:41</field>
     <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
     <field name="trg_date_id" ref="studio_customization.new_date_time_x_docu_76add696-bda2-414c-aafa-0927f39ebe2f"/>
     <field name="trg_date_range" eval="False"/>
@@ -53,7 +53,7 @@
     <field name="active" eval="True"/>
     <field name="filter_domain" eval="False"/>
     <field name="filter_pre_domain" eval="False"/>
-    <field name="last_run">2021-11-25 13:59:25</field>
+    <field name="last_run">2022-01-26 08:54:41</field>
     <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
     <field name="trg_date_id" ref="studio_customization.new_date_time_x_docu_76add696-bda2-414c-aafa-0927f39ebe2f"/>
     <field name="trg_date_range">1</field>
